@@ -11,6 +11,7 @@ namespace BookReviewApp.Interfaces
         ICollection<Category> GetCategories();
         Category GetCategory(Guid Id);
         bool CategoryExist(Guid Id);
+        bool CategoryExist(string categoryName);
         ICollection<Book> GetCategoryBooks(string CategoryName);
         //Update
         public Category UpdateCategory(Category category);

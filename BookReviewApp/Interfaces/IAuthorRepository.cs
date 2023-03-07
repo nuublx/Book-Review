@@ -11,6 +11,7 @@ namespace BookReviewApp.Interfaces
         ICollection<Author> GetAuthors();
         Author GetAuthor(Guid Id);
         bool AuthorExist(Guid Id);
+        bool AuthorExist(string AuthorName);
         ICollection<Book> GetAuthorBooks(Guid AuthorId);
         //Update
         public Author UpdateAuthor(Author author);

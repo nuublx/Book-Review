@@ -29,6 +29,7 @@ namespace BookReviewApp.Repository
 
         //Read
         public bool AuthorExist(Guid AuthorId) => _context.Authors.Any(a => a.Id.Equals(AuthorId));
+        public bool AuthorExist(string AuthorName) => _context.Authors.Any(a => a.Name.Equals(AuthorName));
 
         public Author GetAuthor(Guid AuthorId) => _context.Authors.First(au => au.Id.Equals(AuthorId));
 

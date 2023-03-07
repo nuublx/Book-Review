@@ -27,6 +27,7 @@ namespace BookReviewApp.Repository
 
         //Read
         public bool CategoryExist(Guid Id) => _context.Categories.Any(ct => ct.CategoryId.Equals(Id));
+        public bool CategoryExist(string categoryName) => _context.Categories.Any(ct => ct.CategoryName.Equals(categoryName));
         public ICollection<Category> GetCategories() => _context.Categories.OrderBy(ct => ct.CategoryName).ToList();
         public Category GetCategory(Guid Id) => _context.Categories.First(ct => ct.CategoryId.Equals(Id));
         public ICollection<Book> GetCategoryBooks(string CategoryName) => _context.Books.Where(bk => bk.category.Equals(CategoryName)).ToList();
