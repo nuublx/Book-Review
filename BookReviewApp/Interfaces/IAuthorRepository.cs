@@ -1,12 +1,15 @@
-﻿using BookReviewApp.Models;
+﻿using BookReviewApp.Dto;
+using BookReviewApp.Models;
 
 namespace BookReviewApp.Interfaces
 {
     public interface IAuthorRepository
     {
         ICollection<Author> GetAuthors();
-        ICollection<Author> GetAuthors(String Name);
-        Author GetAuthor(Guid id);
+        Author? GetAuthor(Guid Id);
+        bool AuthorExist(Guid Id);
 
+        ICollection<Book> GetAuthorBooks(Guid AuthorId);
+        Author AddAuthor(AuthorCreationDto author);
     }
 }
