@@ -11,7 +11,7 @@ namespace BookReviewApp.Repository
         private readonly DataContext _context;
         public AuthorRepository(DataContext context)
         {
-            _context= context;
+            _context = context;
         }
 
         //Create
@@ -30,7 +30,7 @@ namespace BookReviewApp.Repository
         //Read
         public bool AuthorExist(Guid AuthorId) => _context.Authors.Any(a => a.Id.Equals(AuthorId));
 
-        public Author? GetAuthor(Guid AuthorId) => _context.Authors.FirstOrDefault(au => au.Id.Equals(AuthorId));
+        public Author GetAuthor(Guid AuthorId) => _context.Authors.First(au => au.Id.Equals(AuthorId));
 
         public ICollection<Book> GetAuthorBooks(Guid AuthorId) => _context.Books.Where(b => b.AuthorID.Equals(AuthorId)).ToList();
 

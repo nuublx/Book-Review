@@ -10,6 +10,7 @@ namespace BookReviewApp.Helper
         {
             CreateMap<Author, AuthorDto>();
             CreateMap<Book, BookDto>();
+            CreateMap<Category, CategoryDto>();
         }
     }
 }

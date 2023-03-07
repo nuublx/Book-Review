@@ -9,7 +9,7 @@ namespace BookReviewApp.Interfaces
         Author AddAuthor(AuthorCreationDto author);
         //Read
         ICollection<Author> GetAuthors();
-        Author? GetAuthor(Guid Id);
+        Author GetAuthor(Guid Id);
         bool AuthorExist(Guid Id);
         ICollection<Book> GetAuthorBooks(Guid AuthorId);
         //Update
