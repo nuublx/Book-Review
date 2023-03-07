@@ -10,6 +10,7 @@ namespace BookReviewApp.Models
         }
         public Guid CategoryId { get; }
         public string CategoryName { get; set; }
+        public ICollection<Book> BooksCategory { get; set; }
 
     }
 }

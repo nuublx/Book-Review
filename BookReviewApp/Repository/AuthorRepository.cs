@@ -14,6 +14,7 @@ namespace BookReviewApp.Repository
             _context= context;
         }
 
+        //Create
         public Author AddAuthor(AuthorCreationDto author)
         {
             var AuthorObject = new Author()
@@ -26,6 +27,7 @@ namespace BookReviewApp.Repository
             return AuthorObject;
         }
 
+        //Read
         public bool AuthorExist(Guid AuthorId) => _context.Authors.Any(a => a.Id.Equals(AuthorId));
 
         public Author? GetAuthor(Guid AuthorId) => _context.Authors.FirstOrDefault(au => au.Id.Equals(AuthorId));
@@ -34,5 +36,18 @@ namespace BookReviewApp.Repository
 
         public ICollection<Author> GetAuthors() => _context.Authors.OrderBy(au => au.Name).ToList();
 
+        //Update
+        public Author UpdateAuthor(Author author)
+        {
+            _context.Authors.Update(author);
+            _context.SaveChanges();
+            return author;
+        }
+        //Delete
+        public void DeleteAuthor(Author author)
+        {
+            _context.Authors.Remove(author);
+            _context.SaveChanges();
+        }
     }
 }
